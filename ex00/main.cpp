@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:46:03 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/14 20:14:05 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/15 14:55:17 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ int	main ( void )
 		std::cout << std::endl;
 		
 
-		std::cout << meta->getType() << " == Animal. His sound is => ";	
+		std::cout << meta->getType() << " == WrongAnimal. His sound is => ";	
 		meta->makeSound();
-		std::cout << i->getType() << " == Cat. His sound is => ";	
+		std::cout << i->getType() << " == WrongCat. His sound is => ";	
 		i->makeSound();
 			std::cout << std::endl;
 	

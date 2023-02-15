@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:46:22 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/14 18:51:45 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/15 14:56:33 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	Dog ( void );
 	~Dog ( void );
 	Dog (const Dog &dog);
-	Dog & operator = (const Dog &dog);
+//	Dog & operator = (const Dog &dog);
 
 	static const std::string	reset_color;
 	static const std::string	color;

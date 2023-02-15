@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:16:27 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/14 20:25:25 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/15 14:49:49 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ WrongAnimal::WrongAnimal ( void ) :
 	type("WrongAnimal")	
 {
 	std::cout << color;
-	std::cout << this->type << " say hello!!" << std::endl;
+	std::cout << "WrongAnimal type " << this->type << " say hello!!" << std::endl;
 	std::cout << reset_color;
 }
 
 WrongAnimal::~WrongAnimal ( void )
 {
 	std::cout << color;
-	std::cout << this->type << " is destrtoyed!!" << std::endl;
+	std::cout << "WrongAnimal type " << this->type << " is destrtoyed!!" << std::endl;
 	std::cout << reset_color;
 }
 
@@ -35,7 +35,7 @@ WrongAnimal::WrongAnimal (const WrongAnimal &wrongAnimal)
 	(void) wrongAnimal;	
 	type = "WrongAnimal";
 	std::cout << color;
-	std::cout << "Copy " << this->type << " say hello!!" << std::endl;
+	std::cout << "Copy WrongAnimal type " << this->type << " say hello!!" << std::endl;
 	std::cout << reset_color;
 }
 
