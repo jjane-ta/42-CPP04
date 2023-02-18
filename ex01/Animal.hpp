@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:07:44 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/15 19:14:53 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:09:50 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 # include <iostream>
 # include <string>
-# include "Brain.hpp"
 
 // ************************************************************************** //
 //                              Animal Class                                
@@ -38,9 +37,8 @@ public:
 	static const std::string	color;
 
 protected:
-	std::string type;
-	Brain	brain;
 
+	std::string type;
 };
 
 #endif /* __ANIMAL_H__ */

@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:07:55 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/15 19:43:43 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:28:40 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	Brain ( void );
 	~Brain ( void );
-	Brain (const Brain &brain);
+	Brain (const Brain *brain);
 	Brain & operator = (const Brain &brain);
 
 	void	print( void ) const;

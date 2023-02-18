@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:16:27 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/15 17:33:35 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/18 19:00:39 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ const std::string Animal::color = "\033[0;38m";
 const std::string Animal::reset_color = "\033[0m";
 
 Animal::Animal ( void ) :
-	type("Animal")	
+	type("Animal")
 {
 	std::cout << color;
 	std::cout << "Animal type " << this->type << " say hello!!" << std::endl;
@@ -32,22 +32,18 @@ Animal::~Animal ( void )
 
 Animal::Animal (const Animal &animal)
 {
-	(void) animal;	
-	type = "Animal";
+	*this = animal;
 	std::cout << color;
 	std::cout << "Copy Animal type " << this->type << " say hello!!" << std::endl;
 	std::cout << reset_color;
 }
 
-
 Animal & Animal::operator = (const Animal &animal)
 {
-	(void) animal;
+	this->type = animal.type;
 	std::cout << color;
-	std::cout << "Operator copy Animal nothing to do." << std::endl;
+	std::cout << "Operator copy " << this->type << " inherit from Animal." << std::endl;
 	std::cout << reset_color;
-
-	//this->type = animal.type;	
 	return (*this);
 }
 
@@ -62,3 +58,4 @@ void	Animal::makeSound( void ) const
 	std::cout << "[*** Animal Sound ***]" << std::endl;
 	std::cout << reset_color;
 }
+

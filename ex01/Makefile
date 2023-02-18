@@ -6,7 +6,7 @@
 #    By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 15:43:43 by jjane-ta          #+#    #+#              #
-#    Updated: 2023/02/15 19:15:12 by jjane-ta         ###   ########.fr        #
+#    Updated: 2023/02/16 18:23:08 by jjane-ta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJ = $(addprefix .,$(addsuffix .o,$(basename $(SRC))))
 DEP = $(addprefix .,$(addsuffix .d,$(basename $(SRC))))
 
-CXX = c++ -std=c++98 -pedantic -Wno-shadow
+CXX = c++ -std=c++98 -pedantic 
 CXXFLAGS = -Wall -Wextra -Werror -MMD -MP
 
 .%.o : %.cpp Makefile

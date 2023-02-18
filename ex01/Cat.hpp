@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:07:36 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/15 19:06:17 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:57:23 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define __CAT_H__
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 
 // ************************************************************************** //
@@ -27,18 +28,22 @@ class Cat : public Animal
 public:
 
 	Cat ( void );
-	~Cat ( void );
+	virtual ~Cat ( void );
 	Cat (const Cat &cat);
-//	Cat & operator = (const Cat &cat);
+	Cat & operator = (const Cat &cat);
 
 	static const std::string	reset_color;
 	static const std::string	color;
 
+	virtual void	makeSound( void ) const;
 
-//	virtual std::string	getType( void ) const;
-	virtual void		makeSound( void ) const;
+	void	add_thought(std::string thought);
+	void	print_brain( void );
+
+private:
+
+	Brain *brain;
 
 };
+
 #endif /* __CAT_H__ */
-
-

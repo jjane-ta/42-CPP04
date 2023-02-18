@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 15:46:22 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/15 14:56:33 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:10:32 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ public:
 	
 	virtual std::string	getType( void ) const;
 	virtual void		makeSound( void ) const;
+
+
+
 
 };
 #endif /* __DOG_H__ */
