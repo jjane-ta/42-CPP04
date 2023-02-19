@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:07:44 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/18 17:09:50 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/19 14:28:16 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 	Animal (const Animal &animal);
 	Animal & operator = (const Animal &animal);
 
-	virtual std::string	getType( void ) const;
+	std::string	getType( void ) const;
 	virtual void		makeSound( void ) const; 
 	
 	static const std::string	reset_color;

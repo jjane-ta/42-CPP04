@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:16:27 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/18 19:01:19 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:17:16 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ Cat::Cat ( void ) :
 
 Cat::~Cat ( void )
 {
-	delete this->brain;
 	std::cout << color;
 	std::cout << this->type << " is destroyed!!" << std::endl;
 	std::cout << reset_color;
+	delete this->brain;
 }
 
 Cat::Cat (const Cat &cat) :

@@ -6,13 +6,13 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:16:27 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/18 19:00:39 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:34:40 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-const std::string Animal::color = "\033[0;38m";
+const std::string Animal::color = "\033[0;36m";
 const std::string Animal::reset_color = "\033[0m";
 
 Animal::Animal ( void ) :
@@ -32,10 +32,10 @@ Animal::~Animal ( void )
 
 Animal::Animal (const Animal &animal)
 {
-	*this = animal;
 	std::cout << color;
 	std::cout << "Copy Animal type " << this->type << " say hello!!" << std::endl;
 	std::cout << reset_color;
+	*this = animal;
 }
 
 Animal & Animal::operator = (const Animal &animal)
