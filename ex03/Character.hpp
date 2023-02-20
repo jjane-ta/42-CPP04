@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:30:41 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/19 19:17:11 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:39:11 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 # include "ICharacter.hpp"
 # include "AMateria.hpp"
+# include "Slot.hpp"
+
+typedef Slot Inventory;
 
 // ************************************************************************** //
 //                              Character Class                                
@@ -38,11 +41,15 @@ public:
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter& target);
 
+	Inventory	*_inventory;
+
+
+
+
 private:
 
-	const std::string	_name
-	AMateria			*_inventory[slots];
-
+	const std::string	_name;
+	
 };
 #endif /* __CHARACTER_H__ */
 
