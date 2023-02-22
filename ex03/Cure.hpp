@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Cure.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 16:25:53 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/22 12:44:46 by jjane-ta         ###   ########.fr       */
+/*   Created: 2023/02/19 17:09:06 by jjane-ta          #+#    #+#             */
+/*   Updated: 2023/02/21 18:19:48 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ICHARACTER_H__
-# define __ICHARACTER_H__
+#ifndef __CURE_H__
+# define __CURE_H__
 
-# include <string>
 # include "AMateria.hpp"
-
-class AMateria;
+# include <string>
 
 // ************************************************************************** //
-//                              ICharacter Class                                
+//                              Cure Class                                
 // ************************************************************************** //
 
-class ICharacter {
+class Cure : public AMateria
+{
 
 public:
+
+	Cure ( void );
+
+//	virtual ~Cure ( void );
 	
-	virtual ~ICharacter() {}
-	virtual std::string const & getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
+/*
+Cure (const Cure &cure);
+//	Cure & operator = (const Cure &cure);
+*/
+
+	virtual AMateria* clone() const;
+	virtual void use(ICharacter& target);
+
+private:
 
 };
-#endif /* __ICHARACTER_H__ */
 
-
+#endif /* __CURE_H__ */

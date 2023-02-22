@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:11:48 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/22 15:03:38 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:04:39 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Ice.hpp"
+# include "Cure.hpp"
 
-Ice::Ice ( void ) : AMateria("ice") {}	
+Cure::Cure ( void ) : AMateria("cure") {}	
 
-AMateria* Ice::clone() const
+AMateria* Cure::clone() const
 {
-	return (new Ice());
+	return (new Cure());
 }
 
-void Ice::use(ICharacter& target)
+void Cure::use(ICharacter& target)
 {
-
-	std::cout << "* shoots an " << this->getType() << " bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
-
 

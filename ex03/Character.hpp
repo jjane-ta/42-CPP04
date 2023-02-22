@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:30:41 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/20 19:39:11 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:00:58 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,12 @@ public:
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter& target);
 
-	Inventory	*_inventory;
-
-
-
+	void	print( void );
 
 private:
 
 	const std::string	_name;
+	Inventory	*_inventory;
 	
 };
 #endif /* __CHARACTER_H__ */

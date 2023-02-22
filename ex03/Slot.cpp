@@ -6,19 +6,22 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 13:50:41 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/20 19:40:52 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:54:53 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Slot.hpp"
 
-Slot * Slot::garbage = new Slot();
+Slot * Slot::floor = new Slot();
 
 Slot::Slot ( void ) : 
 	_materia(nullptr),
 	_next(nullptr)	
 {
-	std::clog << "Slot created" << std::endl;
+	if (!Slot::floor)
+		std::clog << "Floor initialized" << std::endl;
+	else
+		std::clog << "Slot created" << std::endl;
 }
 
 Slot::~Slot ( void )
@@ -33,6 +36,14 @@ Slot::Slot (const Slot & slot) :
 {
 	*this = slot; 
 	std::clog << "Slot copy constructor" << std::endl;
+}
+
+Slot::Slot ( unsigned int deep) : 
+	_materia(nullptr),
+	_next(nullptr)
+{	
+	if (deep > 1)
+		this->_next = new Slot(--deep);
 }
 
 Slot & Slot::operator = (const Slot & slot)
@@ -75,18 +86,22 @@ void	Slot::set( AMateria *amateria )
 			this->_materia  = amateria;
 		else 
 		{
-			if (this->_next)		
+			if (this->_next)	
 				this->_next->set( amateria);
+			else
+				delete amateria;
 		}
 	}
 }
 
 void	Slot::unset(unsigned int index)
 {
-	if (!index)
-	{
-		Slot::garbage->add(this->_materia);
-		this->_materia = nullptr; 
+	
+	if (!index && this->_materia)
+	{	
+				
+		Slot::floor->add(this->_materia);
+		this->_materia = nullptr;
 	}
 	else
 	{
@@ -95,12 +110,12 @@ void	Slot::unset(unsigned int index)
 	}
 }
 
-
 void	Slot::clear( void )
 {
 	if (this->_materia)
 		delete this->_materia;
 	this->_materia = nullptr;
+
 	if (this->_next)
 		delete this->_next;
 	this->_next = nullptr;
@@ -115,4 +130,22 @@ void	Slot::printInventory( void )
 
 	if (this->_next)
 		this->_next->printInventory();
+}
+
+AMateria * Slot::getMateria_byType(std::string const & type)
+{
+	if (this->_materia && !((this->_materia->getType()).compare(type)))
+		return (this->_materia);
+	if (this->_next)
+		return (this->_next->getMateria_byType(type));
+	return (nullptr);
+}
+
+AMateria * Slot::getMateria_byIndex(unsigned int idx)
+{
+	if (!idx)
+		return (this->_materia);
+	if (this->_next)
+		return (this->_next->getMateria_byIndex(--idx));
+	return (nullptr);
 }

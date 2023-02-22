@@ -6,7 +6,7 @@
 /*   By: jjane-ta <jjane-ta@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 16:40:43 by jjane-ta          #+#    #+#             */
-/*   Updated: 2023/02/19 18:28:29 by jjane-ta         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:03:54 by jjane-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,24 @@
 AMateria::AMateria(std::string const & type) : 
 	type(type)
 {
-	std::cout << "AMateria " << type << " created." << std::endl;
+	std::clog << "AMateria " << type << " created." << std::endl;
 }
 
 AMateria::~AMateria ( void )
 {
-	std::cout << "AMateria destroyed." << std::endl;
+	std::clog << "AMateria destroyed." << std::endl;
 }
 
-AMateria::AMateria (const AMateria &amateria) 
+AMateria::AMateria (const AMateria &amateria) : 
+	type(amateria.type)
 {
-	(void) amateria;
-
-	std::cout << "AMateria copy constructor. NADA" << std::endl;
+	std::clog << "AMateria copy constructor." << std::endl;
 }
 
 AMateria & AMateria::operator = (const AMateria &amateria)
 {
-
 	(void)amateria;
-	//TODO
-
-
-	std::cout << "AMateria copy operator. NADA" << std::endl;
+	std::clog << "AMateria copy operator. NOTHING TO DO" << std::endl;
 	return (*this);
 }
 
@@ -50,4 +45,3 @@ void	AMateria::use(ICharacter& target)
 {
 	std::cout << "* laughs at " << target.getName() << " *" << std::endl;
 }
-
